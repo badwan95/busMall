@@ -25,7 +25,7 @@ for (var i=0; i < imgArray.length ; i++){
 }
 function threeRandoms(){
   for (i=0; i<arrID.length;i++){
-    var randomGenerated = randomNumber(0,imgArray.length-1);
+    var randomGenerated = randomNumber(0,imgArray.length);
     console.log(randomGenerated);
     arrID[i].src = productCatalogResults[randomGenerated].url;
     arrID[i].alt = productCatalogResults[randomGenerated].name;
