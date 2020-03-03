@@ -5,10 +5,12 @@ var firstPicID = document.getElementById('firstPicture');
 var secondPicID = document.getElementById('secondPicture');
 var thirdPicID = document.getElementById('thirdPicture');
 var articleID = document.getElementById('article');
+var arrID = [firstPicID,secondPicID,thirdPicID];
 var products = document.getElementById('products');
 var imgArray = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif', 'water-can.jpg', 'wine-glass.jpg'
 ];
-var imgArrayName = ['Bag', 'Banana', 'Bathroom', 'Boots', 'Breakfast', 'Bubblegum', 'Chair', 'Cthulhu', 'Dog Duck', 'Dragon', 'Pen', 'Pet Sweep', 'Scissors', 'Shark', 'Sweep', 'Tauntaun', 'Unicorn', 'Usb', 'Water Can', 'Wine Glass'];
+var imgArrayName = ['Bag', 'Banana', 'Bathroom', 'Boots', 'Breakfast', 'Bubblegum', 'Chair', 'Cthulhu', 'Dog Duck', 'Dragon', 'Pen', 'Pet Sweep', 'Scissors', 'Shark', 'Sweep', 'Tauntaun', 'Unicorn', 'Usb', 'Water Can', 'Wine Glass'
+];
 var productCatalogResults = [];
 var savedClicks = [];
 var savedViews = [];
@@ -27,15 +29,13 @@ for (var i=0; i < imgArray.length ; i++){
 
 function adding(){
   var randomMadeNumberOne = randomNumber(0,imgArray.length);
-  randomNumberArray.unshift(randomMadeNumberOne);
   var randomMadeNumberTwo = randomNumber(0,imgArray.length);
-  randomNumberArray.unshift(randomMadeNumberTwo);
   var randomMadeNumberThree = randomNumber(0,imgArray.length);
-  randomNumberArray.unshift(randomMadeNumberThree);
 
   firstPicID.src = productCatalogResults[randomMadeNumberOne].url;
   firstPicID.alt = productCatalogResults[randomMadeNumberOne].name;
   productCatalogResults[randomMadeNumberOne].views = productCatalogResults[randomMadeNumberOne].views+1;
+
 
   secondPicID.src = productCatalogResults[randomMadeNumberTwo].url;
   secondPicID.alt = productCatalogResults[randomMadeNumberTwo].name;
@@ -44,7 +44,7 @@ function adding(){
   thirdPicID.src = productCatalogResults[randomMadeNumberThree].url;
   thirdPicID.alt = productCatalogResults[randomMadeNumberThree].name;
   productCatalogResults[randomMadeNumberThree].views = productCatalogResults[randomMadeNumberThree].views+1;
-
+  
   //Make sure unique picture every time on same page
   while (firstPicID.alt === secondPicID.alt || firstPicID.alt === thirdPicID.alt ){
     randomNumberArray.shift();
@@ -70,42 +70,9 @@ function adding(){
     thirdPicID.alt = productCatalogResults[randomMadeNumberThree].name;
     productCatalogResults[randomMadeNumberThree].views = productCatalogResults[randomMadeNumberThree].views+1;
   }
-  //Unique numbers every page:
-  while (randomNumberArray.includes(randomMadeNumberOne) === false){
-    console.log(randomNumberArray);
-    randomNumberArray.shift();
-    randomMadeNumberOne = randomNumber(0,imgArray.length);
-    randomNumberArray.unshift(randomMadeNumberOne);
-    console.log(randomNumberArray);
-    firstPicID.src = productCatalogResults[randomMadeNumberOne].url;
-    firstPicID.alt = productCatalogResults[randomMadeNumberOne].name;
-    productCatalogResults[randomMadeNumberOne].views = productCatalogResults[randomMadeNumberOne].views+1;
-  }
-  while (randomNumberArray.includes(randomMadeNumberTwo === false)){
-    randomNumberArray.shift();
-    randomMadeNumberTwo = randomNumber(0,imgArray.length);
-    randomNumberArray.unshift(randomMadeNumberTwo);
-    secondPicID.src = productCatalogResults[randomMadeNumberTwo].url;
-    secondPicID.alt = productCatalogResults[randomMadeNumberTwo].name;
-    productCatalogResults[randomMadeNumberTwo].views = productCatalogResults[randomMadeNumberTwo].views+1;
-  }
-  while (randomNumberArray.includes(randomMadeNumberThree) === false){
-    randomNumberArray.shift();
-    randomMadeNumberThree = randomNumber(0,imgArray.length);
-    randomNumberArray.unshift(randomMadeNumberThree);
-    thirdPicID.src = productCatalogResults[randomMadeNumberThree].url;
-    thirdPicID.alt = productCatalogResults[randomMadeNumberThree].name;
-    productCatalogResults[randomMadeNumberThree].views = productCatalogResults[randomMadeNumberThree].views+1;
-  }
 
-
-  randomNumberArray.pop();
-  randomNumberArray.pop();
-  randomNumberArray.pop();
 }
 adding();
-
-
 
 
 // function threeRandoms(){
