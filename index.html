@@ -9,14 +9,20 @@
 </head>
 <body>
     <header>
+        <h1>This is BusMall! Where you meet all your shopping needs!</h1>
 
     </header>
     <main>
         <section id="products">
+            <h2>Choose a product out of those 3!</h2>
             <img id="firstPicture" src="" alt="" height="400" width="400">
             <img id="secondPicture" src="" alt="" height="400" width="400">
             <img id="thirdPicture" src="" alt="" height="400" width="400">
         </section>
+        <div id="canvasContainer">
+            <h3>Here is a bar chart showing what you chose and what you saw!</h3>
+            <canvas id="productsChart" width="500" height="500"></canvas>
+        </div>
         <article id="article">
 
         </article>
@@ -25,6 +31,8 @@
     <footer>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/app.js"></script>
+    
 </body>
 </html>
