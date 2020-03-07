@@ -261,6 +261,8 @@ function drawChart(){
       ]
     },
     // Configuration options go here
-    options: {}
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,}
   });
 }
